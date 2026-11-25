@@ -1,0 +1,403 @@
+/* ==========================================================================
+   1. Theme Variables
+   ========================================================================== */
+:root {
+  --bg: #0b1220;
+  --p: #121c32;
+  --p2: #18243f;
+  --b: #25345a;
+  --t: #e6ecf8;
+  --m: #8fa0c4;
+  --a: #2dd4bf;
+  --g: #2dd4bf;
+  --i: #fbbf24;
+  --s: #a78bfa;
+}
+
+/* ==========================================================================
+   2. Base & Reset
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--t);
+  font: 15px/1.5 "Segoe UI", system-ui, sans-serif;
+}
+
+a {
+  color: var(--a);
+}
+
+h1 {
+  margin: 0;
+  flex: 1;
+  font-size: 22px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  color: var(--m);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   3. Layout: Sidebar & Main Content
+   ========================================================================== */
+#side {
+  position: sticky;
+  top: 0;
+  width: 230px;
+  height: 100vh;
+  flex-shrink: 0;
+  padding: 20px 14px;
+  background: var(--p);
+  border-right: 1px solid var(--b);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+nav a {
+  display: block;
+  margin-bottom: 4px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--m);
+  text-decoration: none;
+  transition: 0.15s;
+}
+
+nav a:hover {
+  background: var(--p2);
+  color: var(--t);
+}
+
+nav a.on {
+  background: var(--p2);
+  color: var(--a);
+  box-shadow: inset 3px 0 var(--a);
+}
+
+nav b {
+  padding: 0 7px;
+  border-radius: 9px;
+  background: var(--a);
+  color: #042;
+  font-size: 12px;
+}
+
+nav b:empty {
+  display: none;
+}
+
+.note {
+  position: absolute;
+  bottom: 16px;
+  width: 200px;
+  margin: 0;
+  color: var(--m);
+  font-size: 12px;
+}
+
+main {
+  flex: 1;
+  min-width: 0;
+  padding: 0 28px 40px;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  background: var(--bg);
+}
+
+#menu {
+  display: none;
+}
+
+/* ==========================================================================
+   4. Forms & Interactive Controls
+   ========================================================================== */
+input,
+select,
+button {
+  padding: 9px 12px;
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  background: var(--p2);
+  color: var(--t);
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+button:hover,
+.card:hover {
+  border-color: var(--a);
+}
+
+input:focus,
+select:focus,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--a);
+}
+
+#gs {
+  width: 280px;
+}
+
+/* ==========================================================================
+   5. Grid Systems & Containers
+   ========================================================================== */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.kpis {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.two {
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+}
+
+.cards {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.box,
+.card {
+  padding: 18px;
+  border: 1px solid var(--b);
+  border-radius: 12px;
+  background: var(--p);
+  transition: 0.15s;
+}
+
+.kpi .v {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.kpi .l {
+  color: var(--m);
+}
+
+.chart {
+  position: relative;
+  height: 300px;
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+/* ==========================================================================
+   6. Cards, Badges & Actions
+   ========================================================================== */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  color: #06101f;
+  font-weight: 700;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tag {
+  padding: 2px 9px;
+  border: 1px solid;
+  border-radius: 99px;
+  font-size: 12px;
+}
+
+.Graduated {
+  color: var(--g);
+}
+
+.Incubating {
+  color: var(--i);
+}
+
+.Sandbox {
+  color: var(--s);
+}
+
+.card p {
+  min-height: 44px;
+  margin: 10px 0;
+  color: var(--m);
+}
+
+.nums {
+  display: flex;
+  gap: 14px;
+  margin: 8px 0 12px;
+  font-size: 13px;
+}
+
+.nums span {
+  color: var(--m);
+}
+
+.nums b {
+  display: block;
+  color: var(--t);
+  font-size: 16px;
+}
+
+.acts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.acts button,
+.acts a {
+  padding: 6px 10px;
+  border: 1px solid var(--b);
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   7. Tables
+   ========================================================================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px;
+  border-bottom: 1px solid var(--b);
+  text-align: left;
+}
+
+th {
+  color: var(--m);
+  font-weight: 600;
+}
+
+.best {
+  color: var(--a);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   8. Modal & Status Utilities
+   ========================================================================== */
+#modal {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #000a;
+}
+
+#modal[hidden] {
+  display: none;
+}
+
+#modal .box {
+  width: 100%;
+  max-width: 520px;
+}
+
+.ok {
+  color: var(--g);
+}
+
+.warn {
+  color: var(--i);
+}
+
+.err {
+  color: #f87171;
+}
+
+.empty {
+  padding: 40px;
+  color: var(--m);
+  text-align: center;
+}
+
+/* ==========================================================================
+   9. Responsive & Accessibility Media Queries
+   ========================================================================== */
+@media (max-width: 800px) {
+  body {
+    display: block;
+  }
+
+  #side {
+    position: fixed;
+    left: -240px;
+    z-index: 15;
+    transition: 0.2s;
+  }
+
+  #side.open {
+    left: 0;
+  }
+
+  #menu {
+    display: block;
+  }
+
+  #gs {
+    width: 150px;
+  }
+
+  .two {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 0 14px 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
